@@ -1,0 +1,30 @@
+
+.navigation{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(207, 159, 253);
+    border-radius: 20px;
+    box-shadow: 2px 3px 0px rgb(169, 120, 215);
+    width: 450px;
+    height: 48px;
+}
+.link {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-shadow: 1px 2px 0px rgb(169, 120, 215);
+    transition: all 0.3s ease-in-out;
+}
+
+.link:hover {
+    text-shadow: 2px 3px 0px rgb(155, 102, 204);
+    color: rgb(251, 241, 253);
+    transform: scale(1.125);
+}
