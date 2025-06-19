@@ -15,7 +15,8 @@ db.run(`
     CREATE TABLE IF NOT EXISTS posts (
         postID INTEGER PRIMARY KEY AUTOINCREMENT,
         title TEXT NOT NULL,
-        c
+        content TEXT,
+        postDate DATETIME DEFAULT CURRENT_TIMESTAMP
     )
     `);
 
