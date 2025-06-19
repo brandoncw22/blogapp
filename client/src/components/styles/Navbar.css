@@ -9,10 +9,11 @@
     box-shadow: 2px 3px 0px rgb(169, 120, 215);
     width: 450px;
     height: 48px;
+    animation: load 2s ease 0s;
 }
 .link {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
     font-weight: bold;
@@ -27,4 +28,17 @@
     text-shadow: 2px 3px 0px rgb(155, 102, 204);
     color: rgb(251, 241, 253);
     transform: scale(1.125);
+}
+
+@keyframes load {
+  0% {
+    translate: 0px -60px;
+    opacity: 0.75;
+    transform: scale(0.65);
+  }
+  100% {
+    translate: 0px 0px;
+    opacity: 1;
+    transform: scale(1);
+  }
 }

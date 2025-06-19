@@ -2,4 +2,38 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  height: 256px;
+}
+@font-face{
+  font-family: cutetext;
+  src: url(./fonts/cutefont.ttf);
+}
+h1 {
+  color:rgb(238, 219, 255);
+  letter-spacing: 4px;
+  font-family: cutetext;
+  font-weight: lighter;
+  font-size: 80px;
+  height: 64px;
+  text-shadow: 
+  /*Outline*/
+  0.5px 0.5px 0px rgb(176, 143, 207),
+  1px 0.75px 0px rgb(176, 143, 207),
+  2px 2px 0px rgb(176, 143, 207),
+  3px 3px 0px rgb(176, 143, 207),
+  4px 4px 0px rgb(169, 120, 215);
+
+  animation: load 2s ease 0s 1 normal;
+}
+@keyframes load {
+  0% {
+    translate: 0px -60px;
+    opacity: 0.75;
+    transform: scale(0.65);
+  }
+  100% {
+    translate: 0px 0px;
+    opacity: 1;
+    transform: scale(1);
+  }
 }

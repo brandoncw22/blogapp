@@ -9,6 +9,9 @@ import Contact from './pages/Contact';
 function App() {
   return (
     <Router>
+      <div className="admin-bar">
+        
+      </div>
       <header>
         <div id="header-bar" >
           <h1>Dondon & Nini's Blog</h1>
