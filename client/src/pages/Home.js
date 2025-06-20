@@ -8,7 +8,13 @@ function Home() {
 
   return (
     <div className="posts-container">
-
+      {posts.map((id, title, content, thumbnail) => 
+      <Post 
+        postID={id} 
+        postTitle={title}
+        postContent={content}
+        postThumbnail={thumbnail}
+        />)}
     </div>
   );
 }
