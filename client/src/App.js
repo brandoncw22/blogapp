@@ -14,7 +14,7 @@ function App() {
       </div>
       <header>
         <div id="header-bar" >
-          <h1>Dondon & Nini's Blog</h1>
+          <h1 className="title">Dondon & Nini's Blog</h1>
           <Navbar />
         </div>
       </header>

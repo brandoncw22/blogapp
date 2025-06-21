@@ -1,0 +1,12 @@
+
+@font-face{
+  font-family: cutetext;
+  src: url('../../fonts/cutefont.ttf');
+}
+h1{
+    color: rgb(101, 193, 79);
+}
+img {
+  max-width: 512px;
+  max-height: 512px;
+}

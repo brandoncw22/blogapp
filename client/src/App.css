@@ -8,7 +8,7 @@
   font-family: cutetext;
   src: url(./fonts/cutefont.ttf);
 }
-h1 {
+.title {
   color:rgb(238, 219, 255);
   letter-spacing: 4px;
   font-family: cutetext;
