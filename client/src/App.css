@@ -3,6 +3,11 @@
   align-items: center;
   flex-direction: column;
   height: 256px;
+  background-color: white;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 4px 4px 10px rgba(195, 173, 216, 0.418);
+  margin-bottom: 10px;
 }
 @font-face{
   font-family: cutetext;
@@ -27,9 +32,9 @@
 }
 @keyframes load {
   0% {
-    translate: 0px -60px;
+    translate: 0px -20px;
     opacity: 0.75;
-    transform: scale(0.65);
+    transform: scale(0.9);
   }
   100% {
     translate: 0px 0px;

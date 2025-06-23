@@ -32,9 +32,9 @@
 
 @keyframes load {
   0% {
-    translate: 0px -60px;
+    translate: 0px -20px;
     opacity: 0.75;
-    transform: scale(0.65);
+    transform: scale(0.9);
   }
   100% {
     translate: 0px 0px;

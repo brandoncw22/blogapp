@@ -16,18 +16,22 @@ function Home({isLoggedIn}) {
   }
   return (
     <>
-    <Submission />
-    <div className="posts-container">
+    <div className="home_page">
+      <Submission />
+      <div className="posts_container">
       
-      {posts.map((post) => 
-      <Post 
-        id={post.postID} 
-        title={post.postTitle}
-        content={post.postContent}
-        thumbnail={`http://localhost:3030/storage/thumbnail_post${post.postID}.jpg`}
-        key={post.postID}
-        />)}
+        {posts.map((post) => 
+        <Post 
+          id={post.postID} 
+          title={post.postTitle}
+          content={post.postContent}
+          thumbnail={`http://localhost:3030/storage/thumbnail_post${post.postID}.jpg`}
+          key={post.postID}
+          />)}
+      </div>
     </div>
+    
+    
     </>
   );
 }

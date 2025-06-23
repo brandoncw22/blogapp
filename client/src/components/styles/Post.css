@@ -4,9 +4,61 @@
   src: url('../../fonts/cutefont.ttf');
 }
 h1{
-    color: rgb(101, 193, 79);
+  color:rgb(238, 219, 255);
+  text-shadow: 
+  /*Outline*/
+  0.5px 0.5px 0px rgb(176, 143, 207),
+  1px 1px 0px rgb(176, 143, 207),
+  2px 2px 0px rgb(176, 143, 207);
 }
 img {
   max-width: 512px;
   max-height: 512px;
+}
+.post {
+  width: 512px;
+  box-shadow: 2px 2px 20px rgba(195, 173, 216, 0.418);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  overflow: hidden;
+  background-color: white;
+  animation: load 2s ease 0s 1 normal;
+  transition: all 0.2s ease-in-out;
+}
+.post:hover{
+  transform: scale(1.025);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.post_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.post_body {
+  display: none;
+  height: 0;
+}
+.showButton {
+  background-color: transparent;
+  border: none;
+  
+  transform:rotate(0deg);
+}
+@keyframes load {
+  0% {
+    translate: 0px -60px;
+    opacity: 0.75;
+    transform: scale(0.65);
+  }
+  100% {
+    translate: 0px 0px;
+    opacity: 1;
+    transform: scale(1);
+  }
 }

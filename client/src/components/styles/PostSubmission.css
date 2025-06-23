@@ -1,0 +1,31 @@
+form {
+    background-color: white;
+    border-radius: 20px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 512px;
+    box-shadow: 2px 2px 20px rgba(195, 173, 216, 0.418);
+    animation: load 2s ease 0s 1 normal;
+    transition: all 0.2s ease-in-out;
+}
+form:hover {
+    transform: scale(1.025);
+    margin-bottom: 5px;
+}
+input, textarea{
+    margin: 5px;
+}
+@keyframes load {
+  0% {
+    translate: 0px -60px;
+    opacity: 0.75;
+    transform: scale(0.65);
+  }
+  100% {
+    translate: 0px 0px;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
