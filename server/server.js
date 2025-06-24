@@ -39,7 +39,16 @@ db.run(`
         postDate DATETIME DEFAULT CURRENT_TIMESTAMP
     )
     `);
-console.log("Table POSTS created.")
+
+console.log("Table POSTS created.");
+db.run(`
+    CREATE TABLE IF NOT EXISTS users (
+        userID INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT NOT NULL,
+        password TEXT NOT NULL
+    )
+    `);
+console.log("Table USERS created.");
 
 //Post specific handling
 app.get('/loadPosts', (req, res) =>{
@@ -54,7 +63,7 @@ app.get('/loadPosts', (req, res) =>{
             res.json(rows);
         }
         
-    })
+    });
 });
 app.post('/createPost', express.json(), (req, res) =>{
     const {title, content} = req.body;
@@ -102,6 +111,32 @@ app.post('/thumbnailUpload', (req, res) => {
 
     });
 
+});
+
+app.post('/login', (req, res) => {
+    const query = `SELECT * FROM users WHERE username = ?`;
+    const {username, password} = req.body;
+
+    db.get(query, [username], (err, user) => {
+        if (err) {
+        console.error(err.message);
+        return res.status(500).json({ success: false, error: 'Failed to login' });
+        }
+
+        if (!user) {
+        // No user found
+        return res.status(401).json({ success: false, error: 'User not found' });
+        }
+
+        if (user.password !== password) {
+        // Incorrect password
+        return res.status(401).json({ success: false, error: 'Incorrect password' });
+        }
+
+        // Successful login
+        console.log(`User ${username} logged in successfully.`);
+        return res.json({ success: true, username: user.username });
+    });
 });
 //
 

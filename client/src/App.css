@@ -1,13 +1,41 @@
+header{
+  width: 100;
+}
 #header-bar{
   display: flex;
   align-items: center;
   flex-direction: column;
   height: 256px;
   background-color: white;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
-  box-shadow: 4px 4px 10px rgba(195, 173, 216, 0.418);
   margin-bottom: 10px;
+}
+.admin_bar {
+  background-color: white;
+  height: fit-content;
+  padding: 5px;
+  overflow: visible;
+}
+.login_popup{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  background-color: rgb(207, 159, 253);
+  border-radius: 20px;
+  margin: 5px;
+  box-shadow: 
+  /*Outline*/
+  0.5px 0.5px 0px rgb(176, 143, 207),
+  1px 0.75px 0px rgb(176, 143, 207),
+  2px 2px 0px rgb(176, 143, 207);
+}
+.tab_button {
+  align-self: flex-start;
+  border: 0px solid transparent;
+  background-color: transparent;
+  font-size: 28px;
+  color: rgb(239, 210, 255);
 }
 @font-face{
   font-family: cutetext;
@@ -23,12 +51,16 @@
   text-shadow: 
   /*Outline*/
   0.5px 0.5px 0px rgb(176, 143, 207),
-  1px 0.75px 0px rgb(176, 143, 207),
+  1px 1px 0px rgb(176, 143, 207),
   2px 2px 0px rgb(176, 143, 207),
   3px 3px 0px rgb(176, 143, 207),
   4px 4px 0px rgb(169, 120, 215);
 
   animation: load 2s ease 0s 1 normal;
+}
+.login_form{
+  padding: 10px;
+  height: fit-content;
 }
 @keyframes load {
   0% {

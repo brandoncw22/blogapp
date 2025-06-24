@@ -1,4 +1,4 @@
-form {
+.post_submit {
     background-color: white;
     border-radius: 20px;
     margin-top: 10px;
@@ -10,7 +10,7 @@ form {
     animation: load 2s ease 0s 1 normal;
     transition: all 0.2s ease-in-out;
 }
-form:hover {
+.post_submit:hover {
     transform: scale(1.025);
     margin-bottom: 5px;
 }

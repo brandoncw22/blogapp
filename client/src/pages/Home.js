@@ -11,13 +11,10 @@ function Home({isLoggedIn}) {
       .then(res => setPosts(res.data))
       .catch(error => console.error("Error loading posts:", error));
   }, []);
-  const loggedIn = () => {
-    if (isLoggedIn) return <Submission />
-  }
   return (
     <>
     <div className="home_page">
-      <Submission />
+      {isLoggedIn && <Submission />}
       <div className="posts_container">
       
         {posts.map((post) => 

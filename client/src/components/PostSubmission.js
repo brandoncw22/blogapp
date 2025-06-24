@@ -36,7 +36,7 @@ function PostSubmission() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="post_submit">
       <input
         type="text"
         name="title"
