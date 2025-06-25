@@ -3,7 +3,7 @@
   font-family: cutetext;
   src: url('../../fonts/cutefont.ttf');
 }
-h1{
+.post_title{
   color:rgb(238, 219, 255);
   text-shadow: 
   /*Outline*/
@@ -14,6 +14,20 @@ h1{
 img {
   max-width: 512px;
   max-height: 512px;
+}
+.thumbnail_focused{
+  transform: scale(0.8);
+  align-self: center;
+}
+.post_focused{
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  max-height: 800px;
+  max-width: 800px;
+}
+p {
+  font-size: 16px;
 }
 .post {
   width: 512px;
@@ -49,6 +63,31 @@ img {
   border: none;
   
   transform:rotate(0deg);
+}
+.confirmation_header {
+  color: rgb(255, 120, 120);
+}
+.delete_confirm {
+  margin-bottom: 10px;
+  background-color: rgb(132, 255, 125);
+  border: none;
+  border-radius: 10px;
+  width: 100px;
+  height: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(245, 255, 245);
+}
+.delete_cancel {
+  margin-bottom: 10px;
+  background-color: rgb(228, 228, 228);
+  border: none;
+  border-radius: 10px;
+  width: 100px;
+  height: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(245, 255, 245);
 }
 @keyframes load {
   0% {

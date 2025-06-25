@@ -23,6 +23,8 @@ function Home({isLoggedIn}) {
           title={post.postTitle}
           content={post.postContent}
           thumbnail={`http://localhost:3030/storage/thumbnail_post${post.postID}.jpg`}
+          isLoggedIn={isLoggedIn}
+          setPosts={setPosts}
           key={post.postID}
           />)}
       </div>

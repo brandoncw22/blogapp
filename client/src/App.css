@@ -68,6 +68,7 @@ header{
 }
 .popup-content {
   width: fit-content;
+  height: fit-content;
   padding: 20px;
   background: white;
   border-radius: 12px;

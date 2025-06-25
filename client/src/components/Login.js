@@ -53,22 +53,21 @@ function Login({setIsLoggedIn, isLoggedIn}) {
                     e.preventDefault();
 
                     try {
-                    const res = await axios.post('http://localhost:3030/login', {
-                        username,
-                        password
-                    });
+                      const res = await axios.post('http://localhost:3030/login', {
+                          username,
+                          password
+                      });
 
-                    const success = res.data.success;
-                    const user = res.data.username;
+                      const success = res.data.success;
 
-                    if (success) {
-                        setIsLoggedIn(true);
-                        close();
-                    } else {
-
-                    }
+                      if (success) {
+                          setIsLoggedIn(true);
+                          close();
+                      } else {
+                        alert("login unsuccessful");
+                      }
                     } catch (err) {
-                    console.error("Login failed:", err.response?.data || err.message);
+                      console.error("Login failed: ", err.response?.data || err.message);
                     }
                   }}>Login</button>
                 </form>

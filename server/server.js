@@ -112,6 +112,29 @@ app.post('/thumbnailUpload', (req, res) => {
     });
 
 });
+app.post('/deletePost', (req, res) => {
+    const {id} = req.body;
+    if (!id) {
+        return res.status(400).json({ success: false, error: 'Post ID missing' });
+    }
+    const query = `DELETE FROM posts WHERE postID=?`;
+    db.run(query, [id], function(err) {
+        if (err) {
+            console.error(err.message);
+            return res.status(909).json({success: false, error: 'Failed to delete from DB'});
+        }
+        const filePath = path.join(__dirname, 'storage', `thumbnail_post${id}.jpg`);
+        fs.unlink(filePath, (fsErr) => {
+            if (fsErr && fsErr.code !== 'ENOENT') { // ENOENT = file doesn't exist
+                console.error(`Error deleting thumbnail:`, fsErr.message);
+                return res.status(500).json({ success: false, error: 'DB deleted but failed to delete thumbnail' });
+            }
+
+            return res.status(200).json({ success: true, message: 'Post deleted successfully' });
+        });
+    });
+    
+});
 
 app.post('/login', (req, res) => {
     const query = `SELECT * FROM users WHERE username = ?`;
