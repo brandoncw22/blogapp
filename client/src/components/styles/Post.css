@@ -4,20 +4,26 @@
   src: url('../../fonts/cutefont.ttf');
 }
 .post_title{
+  flex: 1;
   color:rgb(238, 219, 255);
   text-shadow: 
   /*Outline*/
   0.5px 0.5px 0px rgb(176, 143, 207),
   1px 1px 0px rgb(176, 143, 207),
   2px 2px 0px rgb(176, 143, 207);
+  text-align: center;
+
 }
 img {
   max-width: 512px;
   max-height: 512px;
 }
+.post_picture {
+  display: flex;
+  justify-content: center;
+}
 .thumbnail_focused{
   transform: scale(0.8);
-  align-self: center;
 }
 .post_focused{
   overflow-y: scroll;
@@ -25,9 +31,6 @@ img {
   flex-direction: column;
   max-height: 800px;
   max-width: 800px;
-}
-p {
-  font-size: 16px;
 }
 .post {
   width: 512px;
@@ -52,17 +55,24 @@ p {
 .post_header {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
-.post_body {
-  display: none;
-  height: 0;
+.post_content {
+  font-size: 18px;
+  white-space: pre-wrap;
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
 }
 .showButton {
   background-color: transparent;
   border: none;
-  
   transform:rotate(0deg);
+}
+.delete_button{
+  height: fit-content;
+  border-radius: 5px;
 }
 .confirmation_header {
   color: rgb(255, 120, 120);

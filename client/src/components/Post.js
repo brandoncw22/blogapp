@@ -1,5 +1,5 @@
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState} from 'react';
 import './styles/Post.css';
 import axios from 'axios';
 import Popup from 'reactjs-popup';
@@ -33,8 +33,8 @@ function Post({id, title, content, thumbnail, isLoggedIn, setPosts}) {
                             alt={`Thumbnail for post ${id}`}
                         />}
                     </div>
-                    <div className="">
-                        <p>{content}</p>
+                    <div className="post_content">
+                        {content}
                     </div>
                 </div>
             </Popup>
@@ -81,9 +81,6 @@ function Post({id, title, content, thumbnail, isLoggedIn, setPosts}) {
                         src={`${thumbnail}`}
                         alt={`Thumbnail for post ${id}`}
                     />}
-                </div>
-                <div className={`post_body`}>
-                    <p className={`post_content`}>{content}</p>
                 </div>
             </div>
         </div>

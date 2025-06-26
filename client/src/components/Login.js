@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import Popup from 'reactjs-popup';
 
-function Login({setIsLoggedIn, isLoggedIn}) {
+function Login({setCookie, setIsLoggedIn, isLoggedIn}) {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -18,6 +18,7 @@ function Login({setIsLoggedIn, isLoggedIn}) {
               <button onClick={async (e) =>{
                   e.preventDefault();
                   setIsLoggedIn(false);
+                  setCookie('remember', false);
                   close();
               }}>Logout</button>
             </form>
@@ -62,6 +63,7 @@ function Login({setIsLoggedIn, isLoggedIn}) {
 
                       if (success) {
                           setIsLoggedIn(true);
+                          setCookie('remember', true, {expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)});
                           close();
                       } else {
                         alert("login unsuccessful");

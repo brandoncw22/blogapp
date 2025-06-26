@@ -6,15 +6,21 @@ import './styles/Home.css';
 
 function Home({isLoggedIn}) {
   const [posts, setPosts] = useState([]);
+  const [postFlag, setPostFlag] = useState(false);
   useEffect(() => {
     axios.get("http://localhost:3030/loadPosts")
       .then(res => setPosts(res.data))
       .catch(error => console.error("Error loading posts:", error));
   }, []);
+  useEffect(() => {
+    axios.get("http://localhost:3030/loadPosts")
+      .then(res => setPosts(res.data))
+      .catch(error => console.error("Error loading posts:", error));
+  }, [postFlag]);
   return (
     <>
     <div className="home_page">
-      {isLoggedIn && <Submission />}
+      {isLoggedIn && <Submission setPostFlag={setPostFlag}/>}
       <div className="posts_container">
       
         {posts.map((post) => 

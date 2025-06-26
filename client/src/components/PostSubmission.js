@@ -1,13 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import './styles/PostSubmission.css';
 
 import axios from 'axios';
 
-function PostSubmission() {
+function PostSubmission({setPostFlag}) {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [thumbnail, setThumbnail] = useState(null);
+  const handleKeyDown = (e) => {
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      const start = e.target.selectionStart;
+      const end = e.target.selectionEnd;
+      const value = content;
 
+      setContent(value.substring(0, start) + '    ' + value.substring(end));
+
+      // Move cursor after the inserted tab
+      setTimeout(() => {
+        e.target.selectionStart = e.target.selectionEnd = start + 4;
+      });
+    }
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -31,6 +45,7 @@ function PostSubmission() {
       }
 
       console.log('Post submitted!');
+      setPostFlag(true);
     } catch (err) {
       console.error("Submission failed:", err.response?.data || err.message);
     }
@@ -50,6 +65,9 @@ function PostSubmission() {
         placeholder="Content"
         value={content}
         onChange={(e) => setContent(e.target.value)}
+        onKeyDown={handleKeyDown}
+        rows={12}
+        className="post_textarea"
       />
       <input
         type="file"
